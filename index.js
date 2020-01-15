@@ -199,4 +199,4 @@ dformat = [d.getMonth()+1,
 })
 
 
-bot.login(token);
+bot.login(process.env.BOT_TOKEN);
