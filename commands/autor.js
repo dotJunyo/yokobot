@@ -1,7 +1,7 @@
 module.exports = {
     name: 'autor',
     description: "A Yoko fala quem é seu criador!",
-    execute(message, args, bot){
+    execute(message, args){
 
         const autorID = bot.fetchUser(295718290251317260).avatarURL();
         const autorName = bot.fetchUser(295718290251317260).username();

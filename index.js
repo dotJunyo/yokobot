@@ -72,7 +72,7 @@ bot.on ('message', async message => {
 
         //=========Autor=========
         case 'autor':
-            bot.commands.get('autor').execute(message, args, bot);
+            bot.commands.get('autor').execute(message, args);
             break;
 
         //========Limpar=========
