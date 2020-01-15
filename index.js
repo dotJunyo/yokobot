@@ -162,8 +162,9 @@ dformat = [d.getMonth()+1,
             message.reply("Você não me disse quem você quer pesquisar =P");
 
         }else{
-
-            const date = usuarioMencionado.createdAt;
+            
+            const dataU = message.mentions.users.first();
+            const date = dataU.createdAt;
             const newDate = date.toLocaleDateString();
 
             const usuarioMencionado = message.mentions.users.first() || message.author;
