@@ -163,7 +163,7 @@ dformat = [d.getMonth()+1,
 
         }else{
 
-            const date = message.author.createdAt;
+            const date = usuarioMencionado.createdAt;
             const newDate = date.toLocaleDateString();
 
             const usuarioMencionado = message.mentions.users.first() || message.author;
