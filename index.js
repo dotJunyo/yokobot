@@ -1,8 +1,17 @@
 const Discord = require('discord.js');
-
 const bot = new Discord.Client();
-
 const token = process.env.KEY_TOKEN;
+const fs = require('fs');
+
+bot.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+
+for(const file of commandsFiles){
+	const command = require(`./commands/${file}`);
+
+	bot.commands.set(command.nome, command);
+}
 
 bot.on('ready', () =>{
     
@@ -63,7 +72,7 @@ bot.on ('message', async message => {
 
         //=========Autor=========
         case 'autor':
-            message.channel.send('Fui criada por dotJunyo!');
+            bot.commands.get('autor').execute(message, args, bot);
             break;
 
         //========Limpar=========
