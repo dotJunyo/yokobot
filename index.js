@@ -54,7 +54,6 @@ bot.on('error', () =>{
 
 })
 
-
 bot.on ('message', async message => {
 
     var prefix = "-";
@@ -72,7 +71,7 @@ bot.on ('message', async message => {
 
         //=========Autor=========
         case 'autor':
-            bot.commands.get('autor').execute(message, args);
+            bot.commands.get('autor').execute(message, _args);
             break;
 
         //========Limpar=========
