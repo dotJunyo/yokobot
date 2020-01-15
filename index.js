@@ -340,7 +340,7 @@ function play(guild, song) {
 
 
 
-const GOOGLE_API_KEY = require('./config');
+/*const GOOGLE_API_KEY = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const fs = require('fs');
