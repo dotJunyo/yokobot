@@ -10,8 +10,6 @@
   "author": "dotJunyo",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "simple-youtube-api": "^5.2.1",
-    "ytdl-core": "^1.0.6"
+    "discord.js": "^11.5.1"
   }
 }
