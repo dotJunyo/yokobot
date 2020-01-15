@@ -2,11 +2,9 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const token = process.env.token;
+const token = process.env.KEY_TOKEN;
 
 bot.on('ready', () =>{
-    
-    process.env.fortnite;
     
     console.log("");
     console.log("=============================================");
@@ -200,4 +198,4 @@ dformat = [d.getMonth()+1,
 })
 
 
-bot.login(token).catch(err => console.log(err));
+bot.login(token);
