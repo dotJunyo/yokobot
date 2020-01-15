@@ -329,7 +329,7 @@ function play(guild, song) {
 }*/
 
 //===========================================================================================================
-/*
+
 
 
 const GOOGLE_API_KEY = require('./config');
@@ -512,11 +512,11 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
-}*/
+}
 
 
 
-const ytdl = require('ytdl-core');
+/*const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 
@@ -621,7 +621,7 @@ function play(guild, song) {
 			console.error(error);
 		});
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-}
+}*/
 
 
 
