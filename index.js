@@ -204,7 +204,7 @@ dformat = [d.getMonth()+1,
         }
     
         //==========PREFIX=========
-        case 'prefix':
+        /*case 'prefix':
             if(!args[1]){
 
                 message.reply("Você precisa definir outro prefix ;P")
@@ -213,7 +213,7 @@ dformat = [d.getMonth()+1,
 
                 var prefix = args[1];
                 message.channel.send("Prefix mudado para: " + prefix);
-            }
+            }*/
 
     }
 
@@ -338,7 +338,7 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 
 const queue = new Map();
 
-client.on('message', async msg => { // eslint-disable-line
+bot.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(PREFIX)) return undefined;
 
