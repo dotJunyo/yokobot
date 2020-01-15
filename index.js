@@ -82,7 +82,7 @@ dformat = [d.getMonth()+1,
             }
             break;
 
-        //INCOMPLETO ========Avatar========
+        //=========Avatar========
         case 'avatar':
             if(!args[1]){                 
                 const avatarEmbed = new Discord.RichEmbed()
@@ -200,10 +200,21 @@ dformat = [d.getMonth()+1,
             .setTitle("O que eu sei dessa pessoa...")
             .setThumbnail(userinfo.avatar);
             message.channel.send(usuarioInfo);
-            
 
         }
     
+        //==========PREFIX=========
+        case 'prefix':
+            if(!args[1]){
+
+                message.reply("Você precisa definir outro prefix ;P")
+
+            }else{
+
+                var prefix = args[1];
+                message.channel.send("Prefix mudado para: " + prefix);
+            }
+
     }
 
     //==========================================FUNÇÕES=========================================
