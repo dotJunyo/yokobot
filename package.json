@@ -1,0 +1,14 @@
+{
+  "name": "yokobot",
+  "version": "0.1a",
+  "description": "A DiscordBot by dotJunyo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dotJunyo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
