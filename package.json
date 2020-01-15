@@ -1,6 +1,6 @@
 {
   "name": "yokobot",
-  "version": "0.2a",
+  "version": "0.2.4",
   "description": "A DiscordBot by dotJunyo",
   "main": "index.js",
   "scripts": {
