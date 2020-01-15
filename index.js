@@ -199,4 +199,4 @@ dformat = [d.getMonth()+1,
 })
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(token).catch(err => console.log(err));
