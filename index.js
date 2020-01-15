@@ -46,14 +46,13 @@ bot.on('error', () =>{
 })
 
 
-bot.on ('message', message => {
+bot.on ('message', async message => {
 
-    const botUser = bot.fetchUser(665812863234998283);
     var prefix = "-";
     let args = message.content.substring(prefix.length).split(" ");
 
     var d = new Date,
-dformat = [d.getMonth()+1,
+    dformat = [d.getMonth()+1,
        d.getDate(),
        d.getFullYear()].join('/')+' '+
       [d.getHours(),
