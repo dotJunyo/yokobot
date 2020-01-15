@@ -3,9 +3,11 @@ const fs = require('fs');
 
 const bot = new Discord.Client();
 
-const token = 'NjY1ODEyODYzMjM0OTk4Mjgz.XhrE2w.A36TaEPTafZ-Dw60kTD1qsiyo70';
+const token = process.env.token;
 
 bot.on('ready', () =>{
+    
+    process.env.fortnite;
     
     console.log("");
     console.log("=============================================");
