@@ -16,20 +16,32 @@ bot.on('ready', () =>{
 });
 
 bot.on('reconnecting', () =>{
-
+    
+    console.log("");
+    console.log("=============================================");
     console.log("Tentando falar com o Discord!");
+    console.log("=============================================");
+    console.log("");
 
 });
 
 bot.on('disconnect', () =>{
-
+    
+    console.log("");
+    console.log("=============================================");
     console.log("Vou ir dormir, hoje foi um dia cheio!");
+    console.log("=============================================");
+    console.log("");
 
 });
 
 bot.on('error', () =>{
 
+    console.log("");
+    console.log("=============================================");
     console.log("Opa, alguém derramou café no meu computador! :^");
+    console.log("=============================================");
+    console.log("");
 
 })
 
