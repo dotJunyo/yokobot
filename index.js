@@ -122,7 +122,7 @@ dformat = [d.getMonth()+1,
             var tempoOn = "Tô meio dormindo ainda k";
 
 
-            while(bot.on){
+            
             if(minutos <= 10){
                 tempoOn = "Acordei agorinha =P";
             }else if(horas <= 12){
@@ -133,10 +133,10 @@ dformat = [d.getMonth()+1,
                 tempoOn = "Daqui a pouco já vai fazer uma semana, é sério, deixa eu dormir..."
             }else{
                 tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
-            }}
+            }
 
             const semDormir = new Discord.RichEmbed()
-            .setAuthor(message.author.username, message.author.avatarURL)
+            //.setAuthor(message.author.username, message.author.avatarURL)
             .addField(dias, " dias")
             .addField(horas, " horas")
             .addField(minutos, " minutos")
@@ -144,7 +144,7 @@ dformat = [d.getMonth()+1,
             .setColor('#00ffff')
             .setFooter("tempoON")
             .setTitle("Quanto tempo eu estou sem dormir")
-            .setThumbnail(message.author.avatarURL);
+            //.setThumbnail(message.author.avatarURL);
 
             message.channel.send(semDormir);       
             break;
