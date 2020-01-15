@@ -329,7 +329,7 @@ function play(guild, song) {
 }*/
 
 //===========================================================================================================
-
+/*
 
 
 const GOOGLE_API_KEY = require('./config');
@@ -353,11 +353,6 @@ bot.on('message', async msg => { // eslint-disable-line
 
 	let command = msg.content.toLowerCase().split(' ')[0];
 	command = command.slice(prefix.length)
-
-
-    if(command === 'test'){
-        msg.channel.send("Te ouvi!");
-    }
 
 	if (command === 'play') {
 		const voiceChannel = msg.member.voiceChannel;
@@ -517,11 +512,11 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
-}
+}*/
 
 
 
-/*const ytdl = require('ytdl-core');
+const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 
@@ -626,7 +621,7 @@ function play(guild, song) {
 			console.error(error);
 		});
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-}*/
+}
 
 
 
