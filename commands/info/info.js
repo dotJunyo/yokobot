@@ -26,7 +26,7 @@ module.exports = {
         const infoEmbed = new RichEmbed()
 
         .setFooter(member.displayName, member.user.displayAvatarURL)
-        .setThumbnail(member.user.AvatarURL)
+        .setThumbnail(member.user.displayAvatarURL)
         .setColor("#00ffff")
 
         .addField('Informação do membro', stripIndents`**> Display Name:** ${member.displayName}
