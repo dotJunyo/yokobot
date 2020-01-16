@@ -41,9 +41,9 @@ function getAll(bot, message){
 function getCMD(bot, message, input){
     const cmdEmbed = new RichEmbed();
 
-    const cmd = bot.commands.get(input.toLoweCase()) || bot.commands.get(bot.aliases.get(input.toLoweCase()));
+    const cmd = bot.commands.get(input.toLowerCase()) || bot.commands.get(bot.aliases.get(input.toLowerCase()));
 
-    let info = `Não sei nada sobre esse comando 😔 **${input.toLoweCase()}**`;
+    let info = `Não sei nada sobre esse comando 😔 **${input.toLowerCase()}**`;
 
     if(!cmd)
         return message.channel.send(cmdEmbed.setColor("RED").setDescription(info));
