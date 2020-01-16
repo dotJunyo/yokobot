@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['user'],
     category: "info",
     description: "Mostra informações de algum usuário",
-    example: `${prefix}info @YokoBot`,
+    example: "-info @YokoBot",
     usage: "[username | id | mentions]",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
