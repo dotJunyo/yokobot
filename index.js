@@ -5,14 +5,11 @@ const token = process.env.KEY_TOKEN;
 const fs = require('fs');
 
 bot.commands = new Collection();
+bot.aliases = new Collection();
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-
-for(const file of commandFiles){
-	const command = require(`./commands/${file}`);
-
-	bot.commands.set(command.nome, command);
-}
+["command"].forEach(handler =>{
+	require(`./handler/${handler}`)(client);
+})
 
 bot.on('ready', () =>{
     
@@ -58,7 +55,22 @@ bot.on('error', () =>{
 bot.on ('message', async message => {
 
     var prefix = "-";
-    let args = message.content.substring(prefix.length).split(" ");
+	//let args = message.content.substring(prefix.length).split(" ");
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const cmd = args.shift().toLowerCase();
+	
+	if (message.author.bot) return;
+	if (!message.guild) return;
+	if (!message.content.startsWith(prefix)) return;
+	if (!message.member) message.member = await message.guild.fetchMember(message);
+	
+	if (cmd.length ===0) return;
+
+	let command = bot.commands.get(cmd);
+	if(!command) command = bot.commands.get(client.aliases.get(cmd));
+
+	if (command)
+		command.run(bot, message, args);
 
     var d = new Date,
     dformat = [d.getMonth()+1,

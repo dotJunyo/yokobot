@@ -14,8 +14,14 @@ module.exports = (client) => {
 
             if(pull.name){
                 client.commands.set(pull.name, pull);
-                table.addRow(file, '')
+                table.addRow(file, '✅');
+            }else{
+                table.addRow(file, '❌ -> está faltando alguma coisa??');
+                continue;
             }
+
+            if (pull.aliases && Array.isArray(pull))
+                pull.aliases.forEach(aliases => client.aliases.set(aliases, pull.name));
         }
 
     })
