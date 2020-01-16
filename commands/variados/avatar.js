@@ -10,18 +10,18 @@ module.exports = {
 
         const member = getMember(message, args.join(" "));
 
-        if(!args[1]){                 
+        if(args[1]){
             const avatarEmbed = new RichEmbed()
             .setColor('#275BF0')
-            .setTitle(message.author.username +", que foto linda ^^")
-            .setImage(message.author.avatarURL);
+            .setTitle(`Foto de ${mentioned.username}`)
+            .setImage(member.avatarURL);
             message.channel.send(avatarEmbed);
         }else{
 
             const avatarEmbed = new RichEmbed()
             .setColor('#275BF0')
-            .setTitle(`Foto de ${mentioned.username}`)
-            .setImage(member.avatarURL);
+            .setTitle(message.author.username +", que foto linda ^^")
+            .setImage(message.author.avatarURL);
             message.channel.send(avatarEmbed);
             
         }
