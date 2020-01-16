@@ -81,87 +81,10 @@ bot.on ('message', async message => {
        d.getSeconds()].join(':');
 
     switch(args[0]){
-
-        //========Limpar=========
-        case 'limpar':
-
-            if(!args[1]){
-                return message.reply("Você não falou quantas mensagens eu tenho que apagar =P")
-                
-            }else{
-                
-                //let msgNumber = args.slice(1).values;
-
-                message.channel.bulkDelete(args[1]);
-                message.channel.bulkDelete(1);
-            }
-            break;
-
-        //=========Avatar========
-        case 'avatar':
-            if(!args[1]){                 
-                const avatarEmbed = new Discord.RichEmbed()
-                .setColor('#275BF0')
-                .setTitle(message.author.username +", que foto linda ^^")
-                .setImage(message.author.avatarURL);
-                message.channel.send(avatarEmbed);
-            }else{
-
-                var mentioned = message.mentions.users.first();
-
-                const avatarEmbed = new Discord.RichEmbed()
-                .setColor('#275BF0')
-                .setTitle(`Foto de ${mentioned.username}`)
-                .setImage(mentioned.avatarURL);
-                message.channel.send(avatarEmbed);
-                
-            }
-            break;
         
         case 'dormir':
             message.channel.send("Posso dormir finalmente \o/");
             bot.off();
-            break;
-
-        case 'uptime':
-            
-            let segundosTotais = Math.floor((bot.uptime / 1000));
-            let dias = Math.floor(segundosTotais / 86400);
-            let horas = Math.floor(segundosTotais / 3600);
-            segundosTotais %= 3600;
-            let minutos = Math.floor(segundosTotais / 60);
-            let segundos = segundosTotais % 60;
-
-            let tempoOnline = `Eu tô acordada a ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ^-^`;
-
-            let tempoOn = "Tô meio dormindo ainda k";
-
-
-            
-            /*if(minutos <= 10){
-                tempoOn = "Acordei agorinha =P";
-            }else if(horas <= 12){
-                tempoOn = "Tá na hora de ir dormir já k"
-            }else if(dias <= 1){
-                tempoOn = "Alguém me deixa dormir pfv ;-;"
-            }else if(dias <= 7){
-                tempoOn = "Daqui a pouco já vai fazer uma semana, é sério, deixa eu dormir..."
-            }else{
-                tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
-            }*/
-
-            const semDormir = new Discord.RichEmbed()
-            .setAuthor(bot.user.username, bot.user.avatarURL)
-            .addField(dias, " dias")
-            .addField(horas, " horas")
-            .addField(minutos, " minutos")
-            .addField(segundos, " segundos")
-            .setColor('#00ffff')
-            .setFooter("tempoON")
-            .setTitle("Quanto tempo eu estou sem dormir")
-            .setThumbnail(bot.user.avatarURL);
-
-            message.channel.send(semDormir);       
             break;
 
         case 'kick':
@@ -169,66 +92,6 @@ bot.on ('message', async message => {
             let membro = message.mentions.members.first();
             membro.kick();
             break;
-
-        case 'info':
-            
-        if(!args[1]){
-
-            message.reply("Você não me disse quem você quer pesquisar =P");
-
-        }else{
-            
-            const dataU = message.mentions.users.first();
-            const date = dataU.createdAt;
-            const newDate = date.toLocaleDateString();
-
-            const usuarioMencionado = message.mentions.users.first() || message.author;
-            const membroMencionado = message.mentions.members.first() || message.member;
-
-            let userinfo = {};
-            userinfo.bot = usuarioMencionado.bot;
-            userinfo.contaDia = newDate;
-            userinfo.tag = usuarioMencionado.discriminator;
-            userinfo.id = usuarioMencionado.id;
-            userinfo.a2f = usuarioMencionado.mfaEnabled;
-            userinfo.nitro = usuarioMencionado.premium;
-            userinfo.presen = usuarioMencionado.presence;
-            userinfo.discordTag = usuarioMencionado.tag;
-            userinfo.nome = usuarioMencionado.username;
-            userinfo.verificado = usuarioMencionado.verified;
-
-            userinfo.avatar = usuarioMencionado.avatarURL;
-
-            const usuarioInfo = new Discord.RichEmbed()
-            .setAuthor(userinfo.nome, userinfo.avatar)
-            .addField("É um robô?",userinfo.bot, true)
-            .addField("Criou sua conta dia",userinfo.contaDia, true)
-            .addField("ID (Só ignora k)",userinfo.id, true)
-            .addField("Autênticação de 2 fatores?",userinfo.a2f, true)
-            .addField("Tem nitro? (Só rico tem =P)",userinfo.nitro, true)
-            .addField("Presença",userinfo.presen, true)
-            .addField("DiscordTag",userinfo.discordTag, true)
-            .addField("Nome",userinfo.nome, true)
-            .addField("Verificado?",userinfo.verificado, true)
-            .setColor('#00ffff')
-            .setFooter('Acho que isso é tudo ^^')
-            .setTitle("O que eu sei dessa pessoa...")
-            .setThumbnail(userinfo.avatar);
-            message.channel.send(usuarioInfo);
-
-        }
-    
-        //==========PREFIX=========
-        /*case 'prefix':
-            if(!args[1]){
-
-                message.reply("Você precisa definir outro prefix ;P")
-
-            }else{
-
-                var prefix = args[1];
-                message.channel.send("Prefix mudado para: " + prefix);
-            }*/
 
     }
 
