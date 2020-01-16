@@ -91,7 +91,7 @@ bot.on ('message', async message => {
             
             let membro = message.mentions.members.first();
             membro.kick();
-            break;
+			break;
 
     }
 
