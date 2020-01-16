@@ -39,7 +39,6 @@ module.exports = {
         .setColor('#00ffff')
         .setFooter("Nem tô com sono não k")
         .setTitle("Eu não durmo há: ")
-        .setThumbnail(bot.user.avatarURL);
 
         message.channel.send(semDormir);  
 
