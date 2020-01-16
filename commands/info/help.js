@@ -27,8 +27,8 @@ module.exports = {
         }
 
         const info = bot.categories
-            .map((cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)})`)
-            .reduce((string, category) => string + "\n" + category));
+            .map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
+            .reduce((string, category) => string + "\n" + category);
 
         return message.channel.send(getEmbed.setDescription(info));
     }
