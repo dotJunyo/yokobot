@@ -40,11 +40,11 @@ module.exports = {
         **> Minutos:** ${minutos}
         **> Segundos:** ${segundos}`, true)
         .setColor('#00ffff')
-        .setFooter(tempoON)
+        .setFooter(tempoON.toString())
         .setTitle("Quanto tempo eu estou sem dormir")
         .setThumbnail(bot.user.avatarURL);
 
-        message.channel.send(semDormir.toString());  
+        message.channel.send(semDormir);  
 
     }}
 
