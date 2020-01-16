@@ -38,7 +38,7 @@ module.exports = {
         .setDescription(stripIndents`** Dias:** ${dias} ** Horas:** ${horas} ** Minutos:** ${minutos} ** Segundos:** ${segundos}`)
         .setColor('#00ffff')
         .setFooter("Nem tô com sono não k")
-        .setTitle("Quanto tempo eu estou sem dormir")
+        .setTitle("Eu não durmo há: ")
         .setThumbnail(bot.user.avatarURL);
 
         message.channel.send(semDormir);  
