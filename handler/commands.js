@@ -24,5 +24,7 @@ module.exports = (client) => {
                 pull.aliases.forEach(aliases => client.aliases.set(aliases, pull.name));
         }
 
+        console.log(table.toString());
+
     })
 }
