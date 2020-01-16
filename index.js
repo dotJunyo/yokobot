@@ -81,23 +81,6 @@ bot.on ('message', async message => {
        d.getMinutes(),
        d.getSeconds()].join(':');
 
-    switch(args[0]){
-        
-        case 'dormir':
-            message.channel.send("Posso dormir finalmente \o/");
-            bot.off();
-            break;
-
-        case 'kick':
-            
-            let membro = message.mentions.members.first();
-            membro.kick();
-			break;
-
-    }
-
-    //==========================================FUNÇÕES=========================================
-
 })
 
 //===========================================================================================================
@@ -211,7 +194,7 @@ function play(guild, song) {
 
 
 
-/*const GOOGLE_API_KEY = require('./config');
+const GOOGLE_API_KEY = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const fs = require('fs');
