@@ -1,4 +1,5 @@
 const { RichEmbed } = require('discord.js');
+const {stripIndents } = require('common-tags');
 
 module.exports = {
     name: "uptime",
@@ -20,7 +21,7 @@ module.exports = {
 
 
 
-/*if(minutos <= 10){
+if(minutos <= 10){
     tempoOn = "Acordei agorinha =P";
 }else if(horas <= 12){
     tempoOn = "Tá na hora de ir dormir já k"
@@ -30,16 +31,16 @@ module.exports = {
     tempoOn = "Daqui a pouco já vai fazer uma semana, é sério, deixa eu dormir..."
 }else{
     tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
-}*/
+}
 
 const semDormir = new RichEmbed()
 .setAuthor(bot.user.username, bot.user.avatarURL)
-.addField(dias, " dias")
-.addField(horas, " horas")
-.addField(minutos, " minutos")
-.addField(segundos, " segundos")
+.addField(stripIndents`**> Dias:** ${dias}
+**> Horas:** ${horas}
+**> Minutos:** ${minutos}
+**> Segundos:** ${segundos}`, true)
 .setColor('#00ffff')
-.setFooter("tempoON")
+.setFooter(tempoON)
 .setTitle("Quanto tempo eu estou sem dormir")
 .setThumbnail(bot.user.avatarURL);
 
