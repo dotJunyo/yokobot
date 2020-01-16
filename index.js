@@ -3,8 +3,6 @@ const bot = new Discord.Client();
 const token = process.env.KEY_TOKEN;
 const fs = require('fs');
 
-const fetch = require("node-fetch");
-
 bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
