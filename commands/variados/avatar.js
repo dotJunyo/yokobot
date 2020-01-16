@@ -10,21 +10,11 @@ module.exports = {
         if(message.deletable) message.delete();
 
         const member = getMember(message, args.join(" "));
-
-        if(args[1]){
-            const avatarEmbed = new RichEmbed()
+        
+        const avatarEmbed = new RichEmbed()
             .setColor('#275BF0')
-            .setTitle(`Foto de ${mentioned.username}`)
-            .setImage(member.avatarURL);
+            .setTitle(`Foto de ${member.user.username}`)
+            .setImage(member.user.displayAvatarURL);
             message.channel.send(avatarEmbed);
-        }else{
-
-            const avatarEmbed = new RichEmbed()
-            .setColor('#275BF0')
-            .setTitle(message.author.username +", que foto linda ^^")
-            .setImage(message.author.avatarURL);
-            message.channel.send(avatarEmbed);
-            
-        }
 
     }}
