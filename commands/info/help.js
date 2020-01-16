@@ -9,7 +9,7 @@ module.exports = {
     usage: "[command | alias",
     run: async(bot, message, args) => {
 
-
+        getAll(bot, message);
 
     }
 }
