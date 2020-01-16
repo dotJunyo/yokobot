@@ -4,13 +4,10 @@ module.exports = {
     description: "Limpa mensagens do chat",
     run: async(bot, message, args) => {
 
-        let msgNumber = args.slice(1).values;
-
-        if(message.deletable) message.delete();
-        
         if(args[0]){
+            if(message.deletable) message.delete();
 
-            message.channel.bulkDelete(msgNumber);
+            message.channel.bulkDelete(args.slice(1).values);
             
         }else{
             
