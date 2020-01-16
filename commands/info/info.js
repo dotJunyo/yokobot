@@ -42,7 +42,7 @@ module.exports = {
         .setTimestamp()
 
         if(member.user.presence.game)
-            infoEmbed.addField(`**> Jogando:** ${member.user.presence.game.name}`)
+            infoEmbed.addField(stripIndents`**> Jogando:** ${member.user.presence.game.name}`)
 
         message.channel.send(infoEmbed);
 
