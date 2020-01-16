@@ -1,9 +1,9 @@
-const Discord = require('discord.js');
+const {Client, RichEmbed, Collection} = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.KEY_TOKEN;
 const fs = require('fs');
 
-bot.commands = new Discord.Collection();
+bot.commands = new Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
@@ -126,11 +126,11 @@ bot.on ('message', async message => {
 
             let tempoOnline = `Eu tô acordada a ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ^-^`;
 
-            var tempoOn = "Tô meio dormindo ainda k";
+            let tempoOn = "Tô meio dormindo ainda k";
 
 
             
-            if(minutos <= 10){
+            /*if(minutos <= 10){
                 tempoOn = "Acordei agorinha =P";
             }else if(horas <= 12){
                 tempoOn = "Tá na hora de ir dormir já k"
@@ -140,10 +140,10 @@ bot.on ('message', async message => {
                 tempoOn = "Daqui a pouco já vai fazer uma semana, é sério, deixa eu dormir..."
             }else{
                 tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
-            }
+            }*/
 
             const semDormir = new Discord.RichEmbed()
-            //.setAuthor(message.author.username, message.author.avatarURL)
+            .setAuthor(bot.user.username, bot.user.avatarURL)
             .addField(dias, " dias")
             .addField(horas, " horas")
             .addField(minutos, " minutos")
@@ -151,7 +151,7 @@ bot.on ('message', async message => {
             .setColor('#00ffff')
             .setFooter("tempoON")
             .setTitle("Quanto tempo eu estou sem dormir")
-            //.setThumbnail(message.author.avatarURL);
+            .setThumbnail(bot.user.avatarURL);
 
             message.channel.send(semDormir);       
             break;
