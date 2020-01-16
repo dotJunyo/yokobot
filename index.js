@@ -202,7 +202,7 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 
 const queue = new Map();
 
-bot.on('message', msg => { // eslint-disable-line
+bot.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
 
