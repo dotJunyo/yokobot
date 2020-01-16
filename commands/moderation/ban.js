@@ -58,7 +58,7 @@ module.exports = {
             .setAuthor("Essa verificação será inválida após 30 segundos")
             .setDescription(`Você quer banir ${toBan}?`);
 
-        message.channel.send(promptEmbed).then(async =>{
+        message.channel.send(promptEmbed).then(async msg =>{
             const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"])
 
             if(emoji === "✅"){
