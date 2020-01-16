@@ -1,5 +1,5 @@
-const {Client, RichEmbed, Collection} = require('discord.js');
-const bot = new Client();
+const {Client, Discord, RichEmbed, Collection} = require('discord.js');
+const bot = new Discord.Client();
 const token = process.env.KEY_TOKEN;
 const fs = require('fs');
 
