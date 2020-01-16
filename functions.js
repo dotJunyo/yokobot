@@ -11,8 +11,8 @@ module.exports = {
         if(!target && toFind){
             
             target = message.guild.members.find(member =>{
-                return member.displayName.toLowerCase().include(toFind) ||
-                member.user.tag.toLowerCase().include(toFind);
+                return member.displayName.toLowerCase().includes(toFind) ||
+                member.user.tag.toLowerCase().includes(toFind);
             });
         }
 

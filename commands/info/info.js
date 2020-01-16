@@ -42,5 +42,7 @@ module.exports = {
         if(member.user.presence.game)
             infoEmbed.addField('Jogando atualmente', `**>Nome:** ${member.user.presence.game.name}`)
 
+        message.channel.send(infoEmbed);
+
         }
 }
