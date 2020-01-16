@@ -35,10 +35,10 @@ module.exports = {
 
         const semDormir = new RichEmbed()
         .setAuthor(bot.user.username, bot.user.avatarURL)
-        .addField(stripIndents`**> Dias:** ${dias}
+        .setDescription(stripIndents`**> Dias:** ${dias}
         **> Horas:** ${horas}
         **> Minutos:** ${minutos}
-        **> Segundos:** ${segundos}`, true)
+        **> Segundos:** ${segundos}`)
         .setColor('#00ffff')
         .setFooter("Nem tô com sono não k")
         .setTitle("Quanto tempo eu estou sem dormir")
