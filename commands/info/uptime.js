@@ -8,15 +8,15 @@ module.exports = {
         if(message.deletable) message.delete();
 
         let segundosTotais = Math.floor((bot.uptime / 1000));
-let dias = Math.floor(segundosTotais / 86400);
-let horas = Math.floor(segundosTotais / 3600);
-segundosTotais %= 3600;
-let minutos = Math.floor(segundosTotais / 60);
-let segundos = segundosTotais % 60;
+        let dias = Math.floor(segundosTotais / 86400);
+        let horas = Math.floor(segundosTotais / 3600);
+        segundosTotais %= 3600;
+        let minutos = Math.floor(segundosTotais / 60);
+        let segundos = segundosTotais % 60;
 
-let tempoOnline = `Eu tô acordada a ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ^-^`;
+        let tempoOnline = `Eu tô acordada a ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ^-^`;
 
-let tempoOn = "Tô meio dormindo ainda k";
+        let tempoOn = "Tô meio dormindo ainda k";
 
 
 
@@ -32,7 +32,7 @@ let tempoOn = "Tô meio dormindo ainda k";
     tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
 }*/
 
-const semDormir = new Discord.RichEmbed()
+const semDormir = new RichEmbed()
 .setAuthor(bot.user.username, bot.user.avatarURL)
 .addField(dias, " dias")
 .addField(horas, " horas")
