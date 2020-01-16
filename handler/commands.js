@@ -2,7 +2,7 @@ const {readdirSync} = require("fs");
 
 const ascii = require("ascii-table");
 
-const table = new ascii().setHeading("Command", "Load Status");
+const table = new ascii().setHeading("Comandos", "Carregados");
 
 module.exports = (client) => {
     readdirSync("./commands/").forEach(dir => {
