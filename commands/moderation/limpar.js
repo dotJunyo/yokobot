@@ -7,9 +7,9 @@ module.exports = {
         
         if(args[1]){
 
-            //let msgNumber = args.slice(1).values;
+            let msgNumber = args.slice(1).values;
 
-            message.channel.bulkDelete(args[1]);
+            message.channel.bulkDelete(msgNumber);
             
         }else{
             
