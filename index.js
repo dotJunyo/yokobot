@@ -8,7 +8,7 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 
 ["commands"].forEach(handler =>{
-	require(`./handler/${handler}`)(client);
+	require(`./handler/${handler}`)(bot);
 })
 
 bot.on('ready', () =>{
