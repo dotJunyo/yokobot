@@ -17,7 +17,7 @@ module.exports = {
 
         let tempoOnline = `Eu tô acordada a ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ^-^`;
 
-        var tempoOn = "Tô meio dormindo ainda k";
+        /*var tempoOn = "Tô meio dormindo ainda k";
 
 
 
@@ -31,7 +31,7 @@ module.exports = {
             tempoOn = "Daqui a pouco já vai fazer uma semana, é sério, deixa eu dormir..."
         }else{
             tempoOn = "Virei sócia da RedBull, não preciso dormir mais \o/"
-        }
+        }*/
 
         const semDormir = new RichEmbed()
         .setAuthor(bot.user.username, bot.user.avatarURL)
@@ -40,7 +40,7 @@ module.exports = {
         **> Minutos:** ${minutos}
         **> Segundos:** ${segundos}`, true)
         .setColor('#00ffff')
-        .setFooter(tempoON.toString())
+        .setFooter("Nem tô com sono não k")
         .setTitle("Quanto tempo eu estou sem dormir")
         .setThumbnail(bot.user.avatarURL);
 
