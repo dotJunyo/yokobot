@@ -5,7 +5,7 @@ module.exports = {
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
         
-        if(args[1]){
+        if(!args[1]){
 
             let msgNumber = args.slice(1).values;
 
@@ -13,7 +13,7 @@ module.exports = {
             
         }else{
             
-            return message.reply("Você não falou quantas mensagens eu tenho que apagar =P")         
+            return message.reply("Você não falou quantas mensagens eu tenho que apagar =P").then(m => m.delete(5000))     
 
         }
         
