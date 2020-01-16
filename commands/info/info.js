@@ -42,8 +42,7 @@ module.exports = {
         .setTimestamp()
 
         if(member.user.presence.game)
-            infoEmbed.addBlankField();
-            infoEmbed.addField('Jogando atualmente', `**> Nome:** ${member.user.presence.game.name}`)
+            infoEmbed.addField(`**> Jogando:** ${member.user.presence.game.name}`)
 
         message.channel.send(infoEmbed);
 
