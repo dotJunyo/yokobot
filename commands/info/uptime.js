@@ -3,6 +3,7 @@ module.exports = {
     category: "info",
     description: "Mostra a quanto tempo eu estou sem dormir!",
     run: async(bot, message, args) => {
+        if(message.deletable) message.delete();
 
         let segundosTotais = Math.floor((bot.uptime / 1000));
 let dias = Math.floor(segundosTotais / 86400);

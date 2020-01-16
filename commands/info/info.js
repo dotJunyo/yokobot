@@ -9,6 +9,7 @@ module.exports = {
     description: "Mostra informações de algum usuário",
     usage: "[username | id, | mentions",
     run: async(bot, message, args) => {
+        if(message.deletable) message.delete();
 
         const member = getMember(message, args.join(" "));
 

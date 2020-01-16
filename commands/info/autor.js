@@ -3,6 +3,7 @@ module.exports = {
     category: "info",
     description: "A Yoko fala quem é seu criador!",
     run: async(bot, message, args) => {
+        if(message.deletable) message.delete();
 
         /*const autorID = bot.fetchUser(295718290251317260).avatarURL();
         const autorName = bot.fetchUser(295718290251317260).username();

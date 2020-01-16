@@ -7,6 +7,7 @@ module.exports = {
     category: "variados",
     description: "Mostra o avatar de algum usuário",
     run: async(bot, message, args) => {
+        if(message.deletable) message.delete();
 
         const member = getMember(message, args.join(" "));
 

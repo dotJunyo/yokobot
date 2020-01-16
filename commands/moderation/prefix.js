@@ -3,6 +3,7 @@ module.exports = {
     category: "moderation",
     description: "Altera o prefix da Yoko",
     run: async(bot, message, args) => {
+        if(message.deletable) message.delete();
 
         if(!args[1]){
 
