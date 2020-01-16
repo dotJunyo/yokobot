@@ -7,7 +7,7 @@ const fs = require('fs');
 bot.commands = new Collection();
 bot.aliases = new Collection();
 
-["command"].forEach(handler =>{
+["commands"].forEach(handler =>{
 	require(`./handler/${handler}`)(client);
 })
 
