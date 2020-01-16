@@ -82,11 +82,6 @@ bot.on ('message', async message => {
 
     switch(args[0]){
 
-        //=========Autor=========
-        case 'autor':
-            bot.commands.get('autor').execute(message, args);
-            break;
-
         //========Limpar=========
         case 'limpar':
 
