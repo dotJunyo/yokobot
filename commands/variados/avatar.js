@@ -18,12 +18,10 @@ module.exports = {
             message.channel.send(avatarEmbed);
         }else{
 
-            var mentioned = message.mentions.users.first();
-
             const avatarEmbed = new RichEmbed()
             .setColor('#275BF0')
             .setTitle(`Foto de ${mentioned.username}`)
-            .setImage(mentioned.avatarURL);
+            .setImage(member.avatarURL);
             message.channel.send(avatarEmbed);
             
         }
