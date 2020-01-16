@@ -25,7 +25,7 @@ module.exports = {
 
     formatDate: function(date){
 
-        return new Intl.DateTimeFormat('pt-BR').format(date);
+        return new Intl.DateTimeFormat('en-GB').format(date);
 
     }
 
