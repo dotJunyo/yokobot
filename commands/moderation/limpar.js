@@ -3,17 +3,19 @@ module.exports = {
     category: "moderation",
     description: "Limpa mensagens do chat",
     run: async(bot, message, args) => {
+
+        let msgNumber = args.slice(1).values;
+
         if(message.deletable) message.delete();
         
-        if(!args[1]){
-
-            let msgNumber = args.slice(1).values;
+        if(args[0]){
 
             message.channel.bulkDelete(msgNumber);
             
         }else{
             
-            return message.reply("Você não falou quantas mensagens eu tenho que apagar =P").then(m => m.delete(5000))     
+            return message.reply("Você não falou quantas mensagens eu tenho que apagar =P")
+                .then(m => m.delete(5000))     
 
         }
         
