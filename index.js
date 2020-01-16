@@ -8,6 +8,8 @@ const fs = require('fs');
 bot.commands = new Collection();
 bot.aliases = new Collection();
 
+bot.categories = new fs.readdirSync("./commands/");
+
 ["commands"].forEach(handler =>{
 	require(`./handler/${handler}`)(bot);
 })
