@@ -3,10 +3,11 @@ const { stripIndents } = require('common-tags');
 
 module.exports = {
     name: "help",
-    aliases: ["ajuda", "h", "commands", "comandos"],
+    aliases: ["ajuda"],
     category: "info",
     description: "Mostra todos os comandos ou um comando específico",
-    usage: "[command | alias",
+    example: "-help info",
+    usage: "[command | alias]",
     run: async(bot, message, args) => {
 
         if(args[0]){
@@ -51,6 +52,7 @@ function getCMD(bot, message, input){
     if(cmd.name) info = `**Comando**: ${cmd.name}`;
     if(cmd.aliases) info += `\n**Aliases**: ${cmd.aliases.map(a => `\`${a}`).join(", ")}`;
     if(cmd.description) info += `\n**Descrição**: ${cmd.description}`;
+    if(cmd.example) info += `\n**Exemplo**: ${cmd.example}`;
     if(cmd.usage){
         info += `\n**Usa**: ${cmd.usage}`;
         cmdEmbed.setFooter(`Sintaxe: <> = requer, [] = opcional`);

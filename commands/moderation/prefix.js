@@ -2,6 +2,7 @@ module.exports = {
     name: "prefix",
     category: "moderation",
     description: "Altera o prefix da Yoko",
+    example: "-prefix !",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
 

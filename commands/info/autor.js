@@ -1,7 +1,9 @@
 module.exports = {
     name: "autor",
+    aliases: "author",
     category: "info",
     description: "A Yoko fala quem é seu criador!",
+    example: "-autor",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
 

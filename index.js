@@ -7,6 +7,7 @@ const fs = require('fs');
 
 bot.commands = new Collection();
 bot.aliases = new Collection();
+bot.example = new Collection();
 
 bot.categories = new fs.readdirSync("./commands/");
 

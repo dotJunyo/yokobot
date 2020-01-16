@@ -3,8 +3,10 @@ const {stripIndents } = require('common-tags');
 
 module.exports = {
     name: "uptime",
+    aliases: ["tempoon"],
     category: "info",
     description: "Mostra a quanto tempo eu estou sem dormir!",
+    example: "-uptime",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
 

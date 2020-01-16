@@ -6,6 +6,7 @@ module.exports = {
     name: "avatar",
     category: "variados",
     description: "Mostra o avatar de algum usuário",
+    example: "-avatar @YokoBot",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
 

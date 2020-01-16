@@ -5,6 +5,7 @@ module.exports = {
     name: "report",
     category: "moderation",
     description: "Eu falo com o ADM quem é o cara mal >:D",
+    example: "-report @Junyo Flood",
     usage: ("<mention | id>"),
     run: async(bot, message, args) => {
 

@@ -1,7 +1,9 @@
 module.exports = {
     name: "limpar",
+    aliases: ["clear"],
     category: "moderation",
     description: "Limpa mensagens do chat",
+    example: "-limpar 10",
     run: async(bot, message, args) => {
 
         if(args[0]){

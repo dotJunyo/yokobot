@@ -4,8 +4,10 @@ const { promptMessage } = require('../../functions.js');
 
 module.exports = {
     name: "ban",
+    aliases: ["banir"],
     category: "moderation",
     description: "Bane um usuário pra sempre do servidor!",
+    example: "-ban @Bagunceiro",
     run: async(bot, message, args) => {
         const logChannel = message.guild.channels.find(c => c.name === "logs") || message.channel;
 

@@ -4,9 +4,10 @@ const { stripIndents } = require("common-tags");
 
 module.exports = {
     name: "info",
-    aliases: ['user', 'userinfo', 'who', 'informação', 'whois'],
+    aliases: ['user'],
     category: "info",
     description: "Mostra informações de algum usuário",
+    exaple: "-info @YokoBot",
     usage: "[username | id | mentions]",
     run: async(bot, message, args) => {
         if(message.deletable) message.delete();
