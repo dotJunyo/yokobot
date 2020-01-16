@@ -1,51 +1,45 @@
+const { getMember, formatDate } = require("../../funcions.js");
+const { RichEmbed } =require("discord.js");
+const { stripIndents } = require("common-tags");
+
 module.exports = {
     name: "info",
+    aliases: ["user", "userinfo", "who", "informação", "whois"],
     category: "info",
     description: "Mostra informações de algum usuário",
+    usage: "[username | id, | mentions",
     run: async(bot, message, args) => {
 
-        if(!args[1]){
+        const member = getMember(message, args.join(" "));
 
-            message.reply("Você não me disse quem você quer pesquisar =P");
+        //Variação de membros
+        const joined = formatDate(member.joinedAt);
+        const roles = member.roles
+            .filter(r => r.id !== message.guild.id)
+            .map(r => r)
+            .join(", " || "none");
 
-        }else{
-            
-            const dataU = message.mentions.users.first();
-            const date = dataU.createdAt;
-            const newDate = date.toLocaleDateString();
+        //Variação de Usuários
+        const created = formatDate(member.user.createdAt);
+        
+        const infoEmbed = new RichEmbed()
+            .setFooter(member.displayName, member.user.displayAvatarURl)
+            .setThumbnail(member.user.displayAvatarURl)
+            .setColor("#00ffff")
 
-            const usuarioMencionado = message.mentions.users.first() || message.author;
-            const membroMencionado = message.mentions.members.first() || message.member;
+            .setField('Informação do membro', stripIndents`**>Display Name:** ${member.displayName}
+            **> Entrou em:** ${joined}
+            **> Cargos:** ${roles}`, true)
 
-            let userinfo = {};
-            userinfo.bot = usuarioMencionado.bot;
-            userinfo.contaDia = newDate;
-            userinfo.tag = usuarioMencionado.discriminator;
-            userinfo.id = usuarioMencionado.id;
-            userinfo.a2f = usuarioMencionado.mfaEnabled;
-            userinfo.nitro = usuarioMencionado.premium;
-            userinfo.presen = usuarioMencionado.presence;
-            userinfo.discordTag = usuarioMencionado.tag;
-            userinfo.nome = usuarioMencionado.username;
-            userinfo.verificado = usuarioMencionado.verified;
+            .setField('Informação de usuário', stripIndents`**> ID:** ${member.user.id}
+            **>Username:** ${member.user.username}
+            **>Discord Tag:** ${member.user.tag}
+            **>Criou em:** ${created}`, true)
 
-            userinfo.avatar = usuarioMencionado.avatarURL;
+            .setTimestamp()
 
-            const usuarioInfo = new Discord.RichEmbed()
-            .setAuthor(userinfo.nome, userinfo.avatar)
-            .addField("É um robô?",userinfo.bot, true)
-            .addField("Criou sua conta dia",userinfo.contaDia, true)
-            .addField("ID (Só ignora k)",userinfo.id, true)
-            .addField("Autênticação de 2 fatores?",userinfo.a2f, true)
-            .addField("Tem nitro? (Só rico tem =P)",userinfo.nitro, true)
-            .addField("Presença",userinfo.presen, true)
-            .addField("DiscordTag",userinfo.discordTag, true)
-            .addField("Nome",userinfo.nome, true)
-            .addField("Verificado?",userinfo.verificado, true)
-            .setColor('#00ffff')
-            .setFooter('Acho que isso é tudo ^^')
-            .setTitle("O que eu sei dessa pessoa...")
-            .setThumbnail(userinfo.avatar);
-            message.channel.send(usuarioInfo);
+            if(member.user.presence.game)
+                infoEmbed.addField('Jogando atualmente', `**>Nome:** ${member.user.presence.game.name}`)
 
-    }}}
+        }
+}
