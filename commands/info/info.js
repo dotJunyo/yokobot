@@ -12,7 +12,6 @@ module.exports = {
 
         const member = getMember(message, args.join(" "));
 
-        var mentioned = message.mentions.users.first();
 
         //Variação de membros
         const joined = formatDate(member.joinedAt);
@@ -26,8 +25,8 @@ module.exports = {
         
         const infoEmbed = new RichEmbed()
 
-        .setFooter(member.displayName, mentioned.AvatarURL)
-        .setThumbnail(mentioned.AvatarURL)
+        .setFooter(member.displayName, member.user.displayAvatarURL)
+        .setThumbnail(member.user.AvatarURL)
         .setColor("#00ffff")
 
         .addField('Informação do membro', stripIndents`**> Display Name:** ${member.displayName}
