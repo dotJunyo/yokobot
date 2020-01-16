@@ -5,7 +5,7 @@ module.exports = {
 
         let target = message.guild.members.get(toFind);
 
-        if(!target && message.mentions.member)
+        if(!target && message.mentions.members)
             target = message.mentions.members.first();
 
         if(!target && toFind){
