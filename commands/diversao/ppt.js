@@ -46,7 +46,7 @@ module.exports = {
                     }
             }
 
-            await pptEmbed.react(playAgain)
+            message.react(playAgain)
             const reaction = collected.first();
             if (reaction.emoji.name === playAgain)
                 message.channel.send(pptEmbed);
