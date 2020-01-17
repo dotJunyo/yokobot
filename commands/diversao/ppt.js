@@ -32,9 +32,11 @@ module.exports = {
                 .addField(result, `${reacted} vs ${botChoice}`);
 
             m.edit(pptEmbed);
+            await pptEmbed.react(playAgain)
             const reaction = collected.first();
             if (reaction.emoji.name === playAgain)
-                pptEmbed();
+                message.channel.send(pptEmbed);
+
 
             function getResult(me, clientChosen){
                 if ((me === "🗻" && clientChosen === "✂") ||
@@ -48,4 +50,5 @@ module.exports = {
                         return "Eu ganhei dessa vez xD"
                     }
             }
+
     }}
