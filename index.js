@@ -71,7 +71,7 @@ bot.on ('message', async message => {
 	if (cmd.length ===0) return;
 
 	let command = bot.commands.get(cmd);
-	if(!command) command = bot.commands.get(client.aliases.get(cmd));
+	if(!command) command = bot.commands.get(bot.aliases.get(cmd));
 
 	if (command)
 		command.run(bot, message, args);
