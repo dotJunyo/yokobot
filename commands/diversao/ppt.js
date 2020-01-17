@@ -33,30 +33,22 @@ module.exports = {
 
             m.edit(pptEmbed);
 
-
-
             function getResult(me, clientChosen){
                 if ((me === "🗻" && clientChosen === "✂") ||
                     (me === "🧻" && clientChosen === "🗻") ||
                     (me === "✂" && clientChosen === "🧻")){
                         return 'Você ganhou! ||eu deixei...||'
-                        pptEmbed.react(playAgain)
-                        const reaction = collected.first();
-                        if (reaction.emoji.name === playAgain)
-                            message.channel.send(pptEmbed);
+                        replay
                     }else if (me === clientChosen){
                         return "Empatamos! Assim todos ganham 😁"
-                        pptEmbed.react(playAgain)
-                        const reaction = collected.first();
-                        if (reaction.emoji.name === playAgain)
-                            message.channel.send(pptEmbed);
                     }else{
                         return "Eu ganhei dessa vez xD"
-                        pptEmbed.react(playAgain)
-                        const reaction = collected.first();
-                        if (reaction.emoji.name === playAgain)
-                            message.channel.send(pptEmbed);
                     }
             }
+
+            await pptEmbed.react(playAgain)
+            const reaction = collected.first();
+            if (reaction.emoji.name === playAgain)
+                message.channel.send(pptEmbed);
 
     }}
