@@ -40,19 +40,19 @@ module.exports = {
                     (me === "🧻" && clientChosen === "🗻") ||
                     (me === "✂" && clientChosen === "🧻")){
                         return 'Você ganhou! ||eu deixei...||'
-                        await pptEmbed.react(playAgain)
+                        pptEmbed.react(playAgain)
                         const reaction = collected.first();
                         if (reaction.emoji.name === playAgain)
                             message.channel.send(pptEmbed);
                     }else if (me === clientChosen){
                         return "Empatamos! Assim todos ganham 😁"
-                        await pptEmbed.react(playAgain)
+                        pptEmbed.react(playAgain)
                         const reaction = collected.first();
                         if (reaction.emoji.name === playAgain)
                             message.channel.send(pptEmbed);
                     }else{
                         return "Eu ganhei dessa vez xD"
-                        await pptEmbed.react(playAgain)
+                        pptEmbed.react(playAgain)
                         const reaction = collected.first();
                         if (reaction.emoji.name === playAgain)
                             message.channel.send(pptEmbed);
