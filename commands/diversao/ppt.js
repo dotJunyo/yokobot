@@ -20,6 +20,7 @@ module.exports = {
 
             const m = await message.channel.send(pptEmbed);
             const reacted = await promptMessage(m, message.author, 30, chooseArr);
+            const replay = await promptMessage(m, message.author, 30, playAgain);
 
             const botChoice = chooseArr[Math.floor(Math.random() * chooseArr.length)];
 
@@ -31,17 +32,20 @@ module.exports = {
                 .addField(result, `${reacted} vs ${botChoice}`);
 
             m.edit(pptEmbed);
+            const reaction = collected.first();
+            if (reaction.emoji.name === playAgain)
+                pptEmbed();
 
             function getResult(me, clientChosen){
                 if ((me === "🗻" && clientChosen === "✂") ||
                     (me === "🧻" && clientChosen === "🗻") ||
                     (me === "✂" && clientChosen === "🧻")){
                         return 'Você ganhou! ||eu deixei...||'
+                        replay
                     }else if (me === clientChosen){
                         return "Empatamos! Assim todos ganham 😁"
                     }else{
                         return "Eu ganhei dessa vez xD"
                     }
             }
-
     }}
