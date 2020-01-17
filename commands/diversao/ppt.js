@@ -45,10 +45,4 @@ module.exports = {
                         return "Eu ganhei dessa vez xD"
                     }
             }
-
-            message.react(playAgain)
-            const reaction = collected.first();
-            if (reaction.emoji.name === playAgain)
-                message.channel.send(pptEmbed);
-
     }}
