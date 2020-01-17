@@ -28,7 +28,7 @@ module.exports = {
 
             pptEmbed
                 .setDescription("")
-                .addField(result, `${result} vs ${botChoice}`);
+                .addField(result, `${reacted} vs ${botChoice}`);
 
             m.edit(pptEmbed);
 
