@@ -19,7 +19,7 @@ module.exports = {
             .setTimestamp();
 
             const m = await message.channel.send(pptEmbed);
-            const reacted = await promptMessage(m, message.author, 30, chooseArr, playAgain);
+            const reacted = await promptMessage(m, message.author, 30, chooseArr);
 
             const botChoice = chooseArr[Math.floor(Math.random() * chooseArr.length)];
 
