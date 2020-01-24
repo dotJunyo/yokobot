@@ -1,6 +1,6 @@
 const {Client, RichEmbed, Collection} = require('discord.js');
 const Discord = require('discord.js');
-const ffmpeg = require('ffmpeg-extra')
+//const ffmpeg = require('ffmpeg-extra')
 const bot = new Discord.Client();
 const client = new Discord.Client();
 const token = process.env.KEY_TOKEN;
