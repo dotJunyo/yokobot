@@ -12,7 +12,7 @@ module.exports = {
         const channel = message.member.voiceChannel;
 
         if(message.member.voiceChannel){
-            channel.joinChannel()
+            channel.join()
             .then(message.reply("Entrei!"))
             .then(m => m.delete(5000));;
         }else{
