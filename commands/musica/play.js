@@ -10,7 +10,7 @@ module.exports = {
     run: async(bot, message, args) => {
 
         if(message.member.voiceChannel){
-
+            message.member.voiceChannel.join();
         }else{
             message.reply("Você precisa estar em um canal de voz pra me ouvir 😝")
         }
