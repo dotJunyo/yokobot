@@ -9,7 +9,7 @@ module.exports = {
     example: "-play All Star",
     run: async(bot, message, args) => {
 
-        const channel = message.member.voiceChannel;
+        const channel = message.author.voiceChannel;
 
         if(message.member.voiceChannel){
             channel.join()
