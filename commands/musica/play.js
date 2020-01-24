@@ -9,10 +9,13 @@ module.exports = {
     example: "-play All Star",
     run: async(bot, message, args) => {
 
+        const channel = message.member.voiceChannel;
+
         if(message.member.voiceChannel){
-            message.reply("Você precisa estar em um canal de voz pra me ouvir 😝")
+            channel.join()
+            .then(message.reply("Entrei!"));
         }else{
-            message.member.voiceChannel.join();
+            message.reply("Você precisa estar em um canal de voz pra me ouvir 😝")
         }
 
 
