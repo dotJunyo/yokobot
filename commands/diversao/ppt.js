@@ -12,6 +12,10 @@ module.exports = {
     description: "Pedra, papel ou tesoura!!!",
     example: "",
     run: async(bot, message, args) => {
+
+        if(message.deletable)
+            message.delete();
+
         const pptEmbed = new RichEmbed()
             .setColor("#ffffff")
             .setFooter(message.guild.me.displayName, bot.user.displayAvatarURL)
