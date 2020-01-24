@@ -12,8 +12,9 @@ module.exports = {
         const channel = message.member.voiceChannel;
 
         if(message.member.voiceChannel){
-            channel.join()
-            .then(message.reply("Entrei!"));
+            channel.joinChannel()
+            .then(message.reply("Entrei!"))
+            .then(m => m.delete(5000));;
         }else{
             message.reply("Você precisa estar em um canal de voz pra me ouvir 😝")
         }
