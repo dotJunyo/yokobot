@@ -12,6 +12,7 @@ module.exports = {
             if(message.deletable) message.delete();
 
             message.channel.bulkDelete(limparLinhas);
+            message.delete();
             
         }else{
             
