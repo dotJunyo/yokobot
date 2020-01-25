@@ -15,7 +15,7 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^3.0.0",
-    "node-opus": "^0.3.3",
+    "opusscript": "0.0.7",
     "uws": "^100.0.1",
     "ws": "^7.2.1",
     "ytdl-core": "^1.0.7",
