@@ -12,8 +12,6 @@ bot.example = new Collection();
 
 var prefix = "-";
 
-export { prefix };
-
 bot.categories = new fs.readdirSync("./commands/");
 
 ["commands"].forEach(handler =>{
