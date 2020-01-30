@@ -4,6 +4,8 @@ module.exports = {
     description: "Altera o prefix da Yoko",
     example: "-prefix !",
     run: async(bot, message, args) => {
+        import { prefix } from './indes.js'
+
         if(message.deletable) message.delete();
 
         let novoPrefix = message.content.replace('-prefix ', '')
