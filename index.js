@@ -10,6 +10,10 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.example = new Collection();
 
+var prefix = "-";
+
+export { prefix };
+
 bot.categories = new fs.readdirSync("./commands/");
 
 ["commands"].forEach(handler =>{
@@ -58,10 +62,6 @@ bot.on('error', () =>{
 })
 
 bot.on ('message', async message => {
-
-    var prefix = "-";
-
-    export { prefix };
 
 	//let args = message.content.substring(prefix.length).split(" ");
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
