@@ -1,21 +1,40 @@
+const { RichEmbed } = require('discord.js');
+
 module.exports = {
     name: "prefix",
     category: "moderation",
     description: "Altera o prefix da Yoko",
     example: "-prefix !",
     run: async(bot, message, args) => {
-        var prefix = require('././index.js');
 
         if(message.deletable) message.delete();
 
-        let novoPrefix = message.content.replace('-prefix ', '')
-
-        if(!args[0]){
-
-            message.reply("Você precisa definir outro prefix ;P")
-
+        if(!message.member.hasPermission("MANAGE_SERVER")){
+            return message.reply("Calma lá meu parceiro, tu não pode mexer nisso não!")
+            .then(m => m.delete(5000));
         }else{
-            prefix = novoPrefix;
-            message.channel.send("Prefix mudado para: " + novoPrefix);
+            if(!args[0] || args[0] == "ajuda" || args[0] == "help"){
 
-    }}}
+                message.reply("Você precisa definir outro prefix 😝")
+                .then(m => m.delete(5000));
+
+            }else{
+                message.channel.send(prefixEmbed)
+            }
+        }
+
+        prefixes[message.guild.id] = {
+            prefixes: args[0]
+        };
+
+        fs.writeFile('./prefixes.jason', JSON.stringify(prefixes)), err =>{
+            if(err)
+                console.log(err)
+        }
+
+        let prefixEmbed = new RichEmbed()
+        .setColor("#FF9900")
+        .setTitle("Prefixo alterado!")
+        .setDescription(`Prefixo mudado para ${args[0]}`);
+    }   
+}

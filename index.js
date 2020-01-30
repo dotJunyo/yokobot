@@ -10,8 +10,6 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.example = new Collection();
 
-var prefix = "-";
-
 bot.categories = new fs.readdirSync("./commands/");
 
 ["commands"].forEach(handler =>{
@@ -70,7 +68,17 @@ bot.on ('message', async message => {
 	if (!message.content.startsWith(prefix)) return;
 	if (!message.member) message.member = await message.guild.fetchMember(message);
 	
-	if (cmd.length ===0) return;
+    if (cmd.length ===0) return;
+    
+    let prefixes = JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
+
+    if(!prefixes[message.guild.id]){
+        prefixes[message.guild.id] = {
+            prefixes: botconfig.prefix
+        }
+    }
+
+    let prefix = prefixes[message.guild.id].prefixes;
 
 	let command = bot.commands.get(cmd);
 	if(!command) command = bot.commands.get(bot.aliases.get(cmd));
