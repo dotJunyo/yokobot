@@ -59,6 +59,8 @@ bot.on('error', () =>{
 
 bot.on ('message', async message => {
 
+    let prefix = "-";
+
     /*
     let prefixes = JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
 
