@@ -95,6 +95,12 @@ bot.on ('message', async message => {
        d.getMinutes(),
        d.getSeconds()].join(':');
 
+    //=================================SOWZX==============================
+
+    if(message.includes("sowzx" || "Sowzx" || "@sowzx" || "@Sowzx")){
+        message.channel.send("Não fala do Sowzx, eca! Ele é muito estranho :c");
+    }
+
 })
 
 bot.login(token);
