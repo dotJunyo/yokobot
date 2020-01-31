@@ -59,6 +59,16 @@ bot.on('error', () =>{
 
 bot.on ('message', async message => {
 
+    let prefixes = JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
+
+    if(!prefixes[message.guild.id]){
+        prefixes[message.guild.id] = {
+            prefixes: botconfig.prefix
+        }
+    }
+
+    let prefix = prefixes[message.guild.id].prefixes;
+
 	//let args = message.content.substring(prefix.length).split(" ");
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const cmd = args.shift().toLowerCase();
@@ -70,15 +80,6 @@ bot.on ('message', async message => {
 	
     if (cmd.length ===0) return;
     
-    let prefixes = JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
-
-    if(!prefixes[message.guild.id]){
-        prefixes[message.guild.id] = {
-            prefixes: botconfig.prefix
-        }
-    }
-
-    let prefix = prefixes[message.guild.id].prefixes;
 
 	let command = bot.commands.get(cmd);
 	if(!command) command = bot.commands.get(bot.aliases.get(cmd));
