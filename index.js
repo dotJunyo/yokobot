@@ -105,7 +105,7 @@ bot.on ('message', message =>{
 
     //=================================SOWZX==============================
 
-    if(message.content('sowzx'/* || 'Sowzx' || '@sowzx' || '@Sowzx'*/)){
+    if(message.content.includes('sowzx'/* || 'Sowzx' || '@sowzx' || '@Sowzx'*/)){
         message.reply("Não fala do Sowzx, eca! Ele é muito estranho :c");
     }
 
