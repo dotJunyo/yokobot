@@ -7,6 +7,9 @@ module.exports = {
     example: "-prefix !",
     run: async(bot, message, args) => {
 
+            prefixes[message.guild.id] = {
+            prefixes: args[0]};
+
         if(message.deletable) message.delete();
 
         if(!message.member.hasPermission("MANAGE_SERVER")){
@@ -22,10 +25,6 @@ module.exports = {
                 message.channel.send(prefixEmbed)
             }
         }
-
-        prefixes[message.guild.id] = {
-            prefixes: args[0]
-        };
 
         fs.writeFile('./prefixes.jason', JSON.stringify(prefixes)), err =>{
             if(err)
