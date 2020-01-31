@@ -59,6 +59,7 @@ bot.on('error', () =>{
 
 bot.on ('message', async message => {
 
+    /*
     let prefixes = JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
 
     if(!prefixes[message.guild.id]){
@@ -68,6 +69,7 @@ bot.on ('message', async message => {
     }
 
     let prefix = prefixes[message.guild.id].prefixes;
+    */
 
 	//let args = message.content.substring(prefix.length).split(" ");
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
