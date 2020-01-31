@@ -99,6 +99,10 @@ bot.on ('message', async message => {
        d.getMinutes(),
        d.getSeconds()].join(':');
 
+})
+
+bot.on ('message', message =>{
+
     //=================================SOWZX==============================
 
     if(message.content('sowzx'/* || 'Sowzx' || '@sowzx' || '@Sowzx'*/)){
@@ -106,5 +110,7 @@ bot.on ('message', async message => {
     }
 
 })
+
+
 
 bot.login(token);
