@@ -101,16 +101,4 @@ bot.on ('message', async message => {
 
 })
 
-bot.on ('message', message =>{
-
-    //=================================SOWZX==============================
-
-    if(message.content.includes('sowzx' || 'Sowzx')){
-        message.reply("Não fala do Sowzx, eca! Ele é muito estranho :c");
-    }
-
-})
-
-
-
 bot.login(token);
