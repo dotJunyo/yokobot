@@ -1,3 +1,5 @@
+const { RichEmbed } = require('discord.js');
+
 module.exports = {
     name: "autor",
     aliases: "author",
