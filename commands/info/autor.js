@@ -10,7 +10,7 @@ module.exports = {
 
         if(message.deletable) message.delete();
 
-        const autorEmbed = new Discord.RichEmbed()
+        const autorEmbed = new RichEmbed()
         .setColor('#275BF0')
         .setTitle("Fui criada por Junyo#6937")
         .setImage("https://i.imgur.com/xgSyBDZ.png")
