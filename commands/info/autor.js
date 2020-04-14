@@ -13,7 +13,7 @@ module.exports = {
         const autorEmbed = new RichEmbed()
         .setColor('#275BF0')
         .setTitle("Fui criada por Junyo#6937")
-        .setImage("https://i.imgur.com/xgSyBDZ.png")
+        .setThumbnail("https://i.imgur.com/xgSyBDZ.png")
         message.channel.send(autorEmbed);
     },
 }
