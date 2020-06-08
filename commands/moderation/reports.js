@@ -26,8 +26,8 @@ module.exports = {
 
         const channel = message.guild.channels.find(channel => channel.name === "reportes");
 
-        if(!channel)
-            if(message.deletable) message.delete();
+        if(!channel) // message.delete(); ---- DELETAR MENSAGEM DE USUÁRIO -- BUG
+
             return message.channel.send("Eu envio esse report pra onde??? Não achei o canal \`#reportes\`").then(m => m.delete(5000))
 
         const reportEmbed = new RichEmbed()
