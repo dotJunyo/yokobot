@@ -22,7 +22,7 @@ module.exports = {
         if(!args[1])
             return message.channel.send("Você não me disse o motivo do reporte =P").then(m => m.delete(5000))
 
-        const channel = message.guild.channels.find(channel => channel.name === "reportes");
+        const channel = message.guild.channels.find(channel => channel.name === "reportes" || "reports" || "Reportes" || "Reports");
 
         if(!channel)
             if(message.deletable) message.delete();
