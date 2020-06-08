@@ -14,7 +14,7 @@ module.exports = {
     example: "-config",
     run: async(bot, message, args) => {
 
-
+        message.channel.send("Meu bot minhas regras!")
 
     }
 }
