@@ -1,0 +1,5 @@
+/*
+
+CANAL DE CONFIG DO BOT
+
+*/

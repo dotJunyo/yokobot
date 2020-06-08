@@ -19,10 +19,12 @@ module.exports = {
         if(rMember.hasPermission("BAN_MEMBERS") || rMember.user.bot)
             return message.reply("Não vou reportar essa pessoa! 🤐").then(m => m.delete(5000))
         
+
+// COLOCAR OUTROS NOMES NO CANAL DE REPORT ----- CANAL DE CONFIG DO BOT
         if(!args[1])
             return message.channel.send("Você não me disse o motivo do reporte =P").then(m => m.delete(5000))
 
-        const channel = message.guild.channels.find(channel => channel.name === ("reportes" || "reports" || "Reportes" || "Reports"));
+        const channel = message.guild.channels.find(channel => channel.name === "reportes");
 
         if(!channel)
             if(message.deletable) message.delete();
