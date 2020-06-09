@@ -11,22 +11,33 @@ module.exports = {
 
         let person = getMember(message, args[0]);
 
-        if(!person || message.author.id === person.id){
-            person = message.guild.members
-                .filter(m => m.id !== message.author.id)
-                .random();
-        }
-
         const love = Math.random() * 100;
         const loveIndex = Math.floor(love / 10);
         const loveLevel = "💖".repeat(loveIndex) + "💔".repeat(10 - loveIndex);
 
-        const loveEmbed = new RichEmbed()
-            .setColor("PINK")
-            .addField(`☁  Quanto **${person.displayName}** ama **${message.member.displayName}**...`,
-            `💟 ${Math.floor(love)}%\n\n${loveLevel}}`)
-            .setThumbnail(person.user.displayAvatarURL)
+        if (!person) {
+            person = message.guild.members
+                .filter(m => m.id !== message.author.id)
+                .random();
 
-        message.channel.send(loveEmbed);
+            const loveEmbed = new RichEmbed()
+                .setColor("PINK")
+                .addField(`☁  Quanto **${person.displayName}** ama **${message.member.displayName}**...`,
+                    `💟 ${Math.floor(love)}%\n\n${loveLevel}}`)
+                .setThumbnail(person.user.displayAvatarURL)
 
-    }}
+            message.channel.send(loveEmbed);
+
+        } else if (message.author.id === person.id) {
+
+            const loveEmbed = new RichEmbed()
+                .setColor("PINK")
+                .addField(`☁  Quanto **${person.displayName}** se ama...`,
+                    `💟 ${Math.floor(love)}%\n\n${loveLevel}}`)
+                .setThumbnail(person.user.displayAvatarURL)
+
+            message.channel.send(loveEmbed);
+
+        }
+    }
+}
