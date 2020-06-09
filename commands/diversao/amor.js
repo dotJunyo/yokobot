@@ -37,7 +37,14 @@ module.exports = {
                 .setThumbnail(person.user.displayAvatarURL)
 
             message.channel.send(loveEmbed);
+        } else {
+            const loveEmbed = new RichEmbed()
+                .setColor("PINK")
+                .addField(`☁  Quanto **${person.displayName}** ama **${message.member.displayName}**...`,
+                    `💟 ${Math.floor(love)}%\n\n${loveLevel}}`)
+                .setThumbnail(person.user.displayAvatarURL)
 
+            message.channel.send(loveEmbed);
         }
     }
 }
