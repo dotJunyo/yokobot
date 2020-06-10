@@ -11,7 +11,8 @@ module.exports = {
         if (args[0]) {
             message.channel.send(limparLinhas).then(m => m.delete(5000));
             message.delete();
-            message.channel.bulkDelete(limparLinhas)
+            message.channel
+                .bulkDelete(args[0])
                 .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
                 .catch(console.error);
             message.reply("Ufa! Limpar cansa um pouquinho 😅")
