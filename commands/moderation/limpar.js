@@ -9,7 +9,7 @@ module.exports = {
         let limparLinhas = message.content.replace('-limpar ', '')
 
         if (args[0]) {
-            message.send(limparLinhas);
+            message.channel.send(limparLinhas);
             message.delete();
             message.channel.bulkDelete(limparLinhas);
             message.reply("Ufa! Limpar cansa um pouquinho 😅")
