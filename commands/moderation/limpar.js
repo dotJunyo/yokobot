@@ -8,7 +8,6 @@ module.exports = {
 
         if (args[0]) {
             var l = parseInt(args[0]);
-            message.channel.send(l).then(m => m.delete(5000));
             message.delete();
             message.channel
                 .bulkDelete(l)
