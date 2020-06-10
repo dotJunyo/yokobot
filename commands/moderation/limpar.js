@@ -6,13 +6,12 @@ module.exports = {
     example: "-limpar 10",
     run: async(bot, message, args) => {
 
-        let limparLinhas = message.content.replace('-limpar ', '')
-
         if (args[0]) {
-            message.channel.send(limparLinhas).then(m => m.delete(5000));
+            var l = parseInt(args[0]);
+            message.channel.send(l).then(m => m.delete(5000));
             message.delete();
             message.channel
-                .bulkDelete(args[0])
+                .bulkDelete(l)
                 .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
                 .catch(console.error);
             message.reply("Ufa! Limpar cansa um pouquinho 😅")
