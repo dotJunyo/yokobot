@@ -16,7 +16,6 @@ module.exports = {
             message.reply("Ufa! Limpar cansa um pouquinho 😅")
                 .then(m => m.delete(5000));
         } else {
-
             return message.reply("Você não falou quantas mensagens eu tenho que apagar =P")
                 .then(m => m.delete(5000))
 
