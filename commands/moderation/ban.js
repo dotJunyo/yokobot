@@ -42,12 +42,12 @@ module.exports = {
                 .then(m => m.delete(5000));
 
         //Banir ADM
-        if (!toBan.banable)
+        if (!toBan.bannable)
             return message.reply("Eu não posso banir meu chefe!!!")
                 .then(m => m.delete(5000));
 
-        if (toBan.banable && message.member.hasPermission("BAN_MEMBERS") && !message.author.id === toBan.id)
-            return message.channel.send(banEmbed)
+        /*if (toBan.banable && message.member.hasPermission("BAN_MEMBERS") && !message.author.id === toBan.id)
+            return message.channel.send(banEmbed)*/
 
         const banEmbed = new RichEmbed()
             .setColor('#ff0000')
