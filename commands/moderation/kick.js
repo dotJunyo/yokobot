@@ -11,38 +11,38 @@ module.exports = {
     run: async(bot, message, args) => {
         const logChannel = message.guild.channels.find(c => c.name === "logs") || message.channel;
 
-        if(message.deletable) message.delete();
+        if (message.deletable) message.delete();
 
         //Não mencionou
-        if(!args[0])
-            return message.reply("Você não me falou quem é o bagunceiro!👀")
-            .then(m => m.delete(5000));
+        if (!args[0])
+            return message.reply("Você não me falou quem é o bagunceiro! 👀")
+                .then(m => m.delete(5000));
 
         //Sem motivo
-        if(!args[1])
+        if (!args[1])
             return message.reply("Você não me falou o motivo!!!")
-            .then(m => m.delete(5000));
+                .then(m => m.delete(5000));
 
         //Sem permissão
-        if(!message.member.hasPermission("KICK_MEMBERS"))
+        if (!message.member.hasPermission("KICK_MEMBERS"))
             return message.reply(`❌ Você não tem permissão pra isso, fale com um staff ou user o ${prefix}report!`)
-            .then(m => m.delete(6000));
-        
+                .then(m => m.delete(6000));
+
 
         const toKick = message.mentions.members.first() || message.guild.members.get(args[0]);
 
         //Membro não encontrado
-        if(!toKick)
+        if (!toKick)
             return message.reply("Não achei o bagunceiro, será que ele se escondeu? 👀")
                 .then(m => m.delete(5000));
 
         //Não pode se kickar
-        if(message.author.id === toKick.id)
+        if (message.author.id === toKick.id)
             return message.reply("Não quero te expulsar! 😔")
                 .then(m => m.delete(5000));
 
         //Kickar ADM
-        if(!toKick.kickable)
+        if (!toKick.kickable)
             return message.reply("Eu não posso expulsar meu chefe!!!")
                 .then(m => m.delete(5000));
 
@@ -60,20 +60,20 @@ module.exports = {
             .setAuthor("Essa verificação será inválida após 30 segundos")
             .setDescription(`Você quer expulsar ${toKick}?`);
 
-        message.channel.send(promptEmbed).then(async msg =>{
+        message.channel.send(promptEmbed).then(async msg => {
             const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"])
 
-            if(emoji === "✅"){
+            if (emoji === "✅") {
                 message.delete();
 
                 toKick.kick(args.slice(1).join(" "))
-                    .catch(err =>{
-                        if(error)
+                    .catch(err => {
+                        if (error)
                             return message.channel.send("Algum bug atrapalhou tudo!");
                     });
 
-                    logChannel.send(kickEmbed);
-            }else if(emoji === "❌"){
+                logChannel.send(kickEmbed);
+            } else if (emoji === "❌") {
                 msg.delete();
 
                 message.reply("Expulsão cancelada, ufa!")
@@ -81,4 +81,5 @@ module.exports = {
             }
         });
 
-    }}
+    }
+}
