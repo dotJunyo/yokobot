@@ -57,6 +57,7 @@ module.exports = {
             .setDescription(stripIndents `**> Usuário banido:** ${toBan} (${toBan.id})
             **> Banido por:** ${message.author} (${message.author.id})
             **> Motivo:** ${args.slice(1).join(" ")}`);
+        return channel.send(reportEmbed);
 
         const promptEmbed = new RichEmbed()
             .setColor('GREEN')

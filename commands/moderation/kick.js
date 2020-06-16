@@ -51,7 +51,8 @@ module.exports = {
             .setThumbnail(toKick.user.displayAvatarURL)
             .setFooter(message.member.displayName, message.author.displayAvatarURL)
             .setTimestamp()
-            .setDescription(stripIndents `**> Usuário punido:** ${toKick} (${toKick.id})
+            .setDescription(stripIndents `
+            **> Usuário punido:** ${toKick} (${toKick.id})
             **> Punido por:** ${message.author} (${message.author.id})
             **> Motivo:** ${args.slice(1).join(" ")}`);
 
