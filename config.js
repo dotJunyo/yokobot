@@ -1,3 +1,4 @@
-const GOOGLE_API_KEY = '';
-
-const prefix = "-"
+{
+    const GOOGLE_API_KEY = '';
+    const prefix = "-"
+}
